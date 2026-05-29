@@ -32,9 +32,9 @@ const main = async () => {
         console.log('======================');
 
         console.log('\nCurrent rate')
-        console.log(`1 RUB = ${rateUSD}`);
-        console.log(`1 RUB = ${rateEUR}`);
-        console.log(`1 RUB = ${rateKZT}`);
+        console.log(`1 RUB = ${rateUSD.toFixed(4)}`);
+        console.log(`1 RUB = ${rateEUR.toFixed(4)}`);
+        console.log(`1 RUB = ${rateKZT.toFixed(2)}`);
 
         console.log('\n0 - Exit');
         console.log('1 - RUB => USD, EUR, KZT');
@@ -42,7 +42,7 @@ const main = async () => {
 
         const conversionType = Number(prompt('\nChoose an action: '))
 
-        if (Number.isNaN(conversionType) || conversionType < 0 || conversionType > 2) {
+        if (conversionType < 0 || conversionType > 2) {
             console.log('\nExiting program.');
             throw new Error('Please enter a correct action');
         }
@@ -70,7 +70,7 @@ const main = async () => {
                     throw new Error('Invalid amount');
                 } else {
                     const result = amount * rateUSD
-                    console.log(result.toFixed(2))
+                    console.log('Result:', result.toFixed(2))
                     return;
                 }
 
@@ -82,7 +82,7 @@ const main = async () => {
                     throw new Error('Invalid amount');
                 } else {
                     const result = amount * rateEUR
-                    console.log(result.toFixed(2))
+                    console.log('Result:', result.toFixed(2))
                     return;
                 }
 
@@ -94,7 +94,7 @@ const main = async () => {
                     throw new Error('Invalid amount');
                 } else {
                     const result = amount * rateKZT
-                    console.log(result.toFixed(2))
+                    console.log('Result:', result.toFixed(2))
                     return;
                 }
             }
@@ -111,9 +111,41 @@ const main = async () => {
             if (sourceCurrencyChoice < 1 || sourceCurrencyChoice > 3) {
                 console.log('\nExiting program.');
                 throw new Error('Invalid input');
-            } else if (sourceCurrencyChoice)
-        }
+            } else if (sourceCurrencyChoice === 1) {
+                const amount = Number(prompt('\nEnter the amount: '));
 
+                if (amount < 0) {
+                    console.log('\nExiting program.');
+                    throw new Error('Invalid amount');
+                } else {
+                    const result = amount / rateUSD
+                    console.log('Result:', result.toFixed(2))
+                    return
+                }
+            } else if (sourceCurrencyChoice === 2) {
+                const amount = Number(prompt('\nEnter the amount: '));
+
+                if (amount < 0) {
+                    console.log('\nExiting program.');
+                    throw new Error('Invalid input');
+                } else {
+                    const result = amount / rateEUR
+                    console.log('Result:', result.toFixed(2))
+                    return
+                }
+            } else if (sourceCurrencyChoice === 3) {
+                const amount = Number(prompt('\nEnter the amount: '));
+
+                if (amount < 0) {
+                    console.log('\nExiting program.');
+                    throw new Error('Invalid input');
+                } else {
+                    const result = amount / rateKZT
+                    console.log('Result:', result.toFixed(2))
+                    return;
+                }
+            }
+        }
 
     } catch (error) {
         if (error.name ==='AbortError') {
@@ -123,7 +155,6 @@ const main = async () => {
 
         console.log('Error:', error.message);
     }
-
 }
 
 main()
