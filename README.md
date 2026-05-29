@@ -110,12 +110,6 @@ Follow the interactive menu to choose a conversion direction and enter an amount
 
 ---
 
-## License
-
-[MIT](./LICENSE) © 2024 your-name
-
----
-
 # 💱 Currency Converter CLI (на русском)
 
 Консольное приложение на Node.js для конвертации валют в реальном времени. Получает актуальные курсы через API и предоставляет удобное интерактивное меню прямо в терминале.
@@ -225,9 +219,3 @@ npm start
 | [prompt-sync](https://www.npmjs.com/package/prompt-sync) | Синхронный ввод в терминале |
 | [Exchange Rate API](https://www.exchangerate-api.com) | Актуальные курсы валют |
 | dotenv | Управление API-ключом через `.env` |
-
----
-
-## Лицензия
-
-[MIT](./LICENSE) © 2024 your-name
