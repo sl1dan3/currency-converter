@@ -1,148 +1,233 @@
-# Currency Converter CLI
+# 💱 Currency Converter CLI
 
-## Русский
+A Node.js console application that fetches live exchange rates and converts between RUB, USD, EUR, and KZT right in your terminal.
 
-Currency Converter CLI — это консольная программа на Node.js для конвертации валют.
+---
 
-Программа получает актуальный курс валют через API и позволяет конвертировать:
+## Demo
 
-* RUB → USD
-* RUB → EUR
-* RUB → KZT
-* USD → RUB
-* EUR → RUB
-* KZT → RUB
+```
+╔══════════════════════════════╗
+║     Currency Converter CLI   ║
+╚══════════════════════════════╝
 
-## Что должно быть установлено
+Select conversion direction:
+  1. RUB → USD
+  2. RUB → EUR
+  3. RUB → KZT
+  4. USD → RUB
+  5. EUR → RUB
+  6. KZT → RUB
+  0. Exit
 
-Для запуска программы на компьютере должны быть установлены:
+Your choice: 1
+Enter amount in RUB: 10000
 
-* Node.js
-* npm
-
-Проверить установку можно командами:
-
-```bash
-node -v
-npm -v
+✔ 10 000 RUB = 109.45 USD
+  (Rate: 1 USD = 91.36 RUB — updated just now)
 ```
 
-## Установка
-
-Склонируйте репозиторий:
-
-```bash
-git clone <ссылка-на-репозиторий>
-```
-
-Перейдите в папку проекта:
-
-```bash
-cd currency-converter
-```
-
-Установите зависимости:
-
-```bash
-npm install
-```
-
-## Запуск
-
-Запустите программу командой:
-
-```bash
-node converter.js
-```
-
-Если в `package.json` добавлен скрипт `start`, можно запускать так:
-
-```bash
-npm start
-```
-
-## Возможности
-
-* получение актуального курса валют;
-* конвертация рублей в USD, EUR и KZT;
-* конвертация USD, EUR и KZT в рубли;
-* обработка ошибок при запросе к API;
-* таймаут запроса;
-* интерактивное меню в терминале.
-
-## English
-
-Currency Converter CLI is a Node.js console application for currency conversion.
-
-The program fetches current exchange rates from an API and allows you to convert:
-
-* RUB → USD
-* RUB → EUR
-* RUB → KZT
-* USD → RUB
-* EUR → RUB
-* KZT → RUB
-
-## Requirements
-
-To run this program, you need to have installed:
-
-* Node.js
-* npm
-
-You can check them with:
-
-```bash
-node -v
-npm -v
-```
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone <repository-url>
-```
-
-Go to the project folder:
-
-```bash
-cd currency-converter
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-## Usage
-
-Run the program:
-
-```bash
-node converter.js
-```
-
-If the `start` script is added to `package.json`, you can run:
-
-```bash
-npm start
-```
+---
 
 ## Features
 
-* fetches current exchange rates;
-* converts RUB to USD, EUR and KZT;
-* converts USD, EUR and KZT to RUB;
-* handles API request errors;
-* request timeout;
-* interactive terminal menu.
+- Live exchange rates via [Exchange Rate API](https://www.exchangerate-api.com)
+- Converts RUB ↔ USD, RUB ↔ EUR, RUB ↔ KZT
+- Interactive terminal menu (no flags to memorize)
+- Graceful error handling and configurable request timeout
 
-## Technologies
+---
 
-* JavaScript
-* Node.js
-* prompt-sync
-* Exchange Rate API
+## Requirements
+
+- [Node.js](https://nodejs.org) v16 or higher
+- npm (comes with Node.js)
+
+```bash
+node -v   # v16.0.0 or higher
+npm -v
+```
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/currency-converter.git
+cd currency-converter
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Set up your API key
+
+Get a free key at [exchangerate-api.com](https://www.exchangerate-api.com), then create a `.env` file in the project root:
+
+```bash
+cp .env.example .env
+```
+
+Open `.env` and paste your key:
+
+```
+EXCHANGE_RATE_API_KEY=your_api_key_here
+```
+
+> **Note:** The free plan allows 1 500 requests per month. For personal use this is more than enough.
+
+---
+
+## Usage
+
+```bash
+node converter.js
+```
+
+Or via npm script:
+
+```bash
+npm start
+```
+
+Follow the interactive menu to choose a conversion direction and enter an amount.
+
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| Node.js | Runtime |
+| [prompt-sync](https://www.npmjs.com/package/prompt-sync) | Synchronous terminal input |
+| [Exchange Rate API](https://www.exchangerate-api.com) | Live exchange rate data |
+| dotenv | API key management via `.env` |
+
+---
+
+## License
+
+[MIT](./LICENSE) © 2024 your-name
+
+---
+
+# 💱 Currency Converter CLI (на русском)
+
+Консольное приложение на Node.js для конвертации валют в реальном времени. Получает актуальные курсы через API и предоставляет удобное интерактивное меню прямо в терминале.
+
+---
+
+## Демо
+
+```
+╔══════════════════════════════╗
+║     Currency Converter CLI   ║
+╚══════════════════════════════╝
+
+Выберите направление конвертации:
+  1. RUB → USD
+  2. RUB → EUR
+  3. RUB → KZT
+  4. USD → RUB
+  5. EUR → RUB
+  6. KZT → RUB
+  0. Выход
+
+Ваш выбор: 1
+Введите сумму в RUB: 10000
+
+✔ 10 000 RUB = 109.45 USD
+  (Курс: 1 USD = 91.36 RUB — только что обновлено)
+```
+
+---
+
+## Возможности
+
+- Актуальные курсы валют через [Exchange Rate API](https://www.exchangerate-api.com)
+- Конвертация RUB ↔ USD, RUB ↔ EUR, RUB ↔ KZT
+- Интерактивное меню — никаких флагов запоминать не нужно
+- Обработка ошибок и таймаут запроса к API
+
+---
+
+## Требования
+
+- [Node.js](https://nodejs.org) версии 16 и выше
+- npm (устанавливается вместе с Node.js)
+
+```bash
+node -v   # v16.0.0 или выше
+npm -v
+```
+
+---
+
+## Быстрый старт
+
+### 1. Клонировать репозиторий
+
+```bash
+git clone https://github.com/your-username/currency-converter.git
+cd currency-converter
+```
+
+### 2. Установить зависимости
+
+```bash
+npm install
+```
+
+### 3. Настроить API-ключ
+
+Получите бесплатный ключ на [exchangerate-api.com](https://www.exchangerate-api.com), затем создайте файл `.env` в корне проекта:
+
+```bash
+cp .env.example .env
+```
+
+Откройте `.env` и вставьте ключ:
+
+```
+EXCHANGE_RATE_API_KEY=ваш_ключ_здесь
+```
+
+> **Примечание:** Бесплатный план позволяет делать 1 500 запросов в месяц — для личного пользования этого более чем достаточно.
+
+---
+
+## Запуск
+
+```bash
+node converter.js
+```
+
+Или через npm-скрипт:
+
+```bash
+npm start
+```
+
+Следуйте интерактивному меню: выберите направление конвертации и введите сумму.
+
+---
+
+## Технологии
+
+| Инструмент | Назначение |
+|---|---|
+| Node.js | Среда выполнения |
+| [prompt-sync](https://www.npmjs.com/package/prompt-sync) | Синхронный ввод в терминале |
+| [Exchange Rate API](https://www.exchangerate-api.com) | Актуальные курсы валют |
+| dotenv | Управление API-ключом через `.env` |
+
+---
+
+## Лицензия
+
+[MIT](./LICENSE) © 2024 your-name
