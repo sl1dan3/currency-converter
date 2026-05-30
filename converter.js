@@ -17,7 +17,7 @@ const main = async () => {
         clearTimeout(responseTimer);
 
         if (!response.ok) {
-            console.log('Ошибка при получении курса валют');
+            console.log('Error while retrieving exchange rates');
             return;
         }
 
@@ -28,7 +28,7 @@ const main = async () => {
         const rateKZT = data.rates.KZT;
 
         console.log('======================');
-        console.log('    RubKZT Converter');
+        console.log('Currency Converter CLI');
         console.log('======================');
 
         console.log('\nCurrent rate')
@@ -149,7 +149,7 @@ const main = async () => {
 
     } catch (error) {
         if (error.name ==='AbortError') {
-            console.log('Запрос выполнялся больше 5 секунд')
+            console.log('The request took more than 5 seconds to complete.')
             return;
         }
 
