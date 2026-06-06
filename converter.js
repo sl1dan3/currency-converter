@@ -47,7 +47,7 @@ function promptCurrency(label) {
 
 function printRates(rates) {
     console.log('\n======================');
-    console.log(' Currency Converter CLI');
+    console.log('Currency Converter CLI');
     console.log('======================');
     console.log('\nCurrent rates (1 RUB):');
     CURRENCIES.forEach(cur => console.log(`  ${cur}: ${rates[cur].toFixed(cur === 'KZT' ? 2 : 4)}`));
